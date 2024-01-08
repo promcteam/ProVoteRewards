@@ -1,0 +1,5 @@
+name: ${project.name}
+main: com.caversia.plugins.votes.spigot.Main
+version: ${project.version}
+authors: [marvnfl, sp3c]
+depend: [WorldGuard]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+    "classpath://org/hibernate/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/caversia-votes</property>
+        <property name="hibernate.connection.username">caversia</property>
+        <property name="hibernate.connection.password">caversia#123</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">5</property>
+        <property name="hibernate.c3p0.timeout">500</property>
+        <property name="hibernate.c3p0.max_statements">5</property>
+        <property name="hibernate.c3p0.idle_test_period">2000</property>
+        
+        <!-- Model -->
+        <mapping class="com.caversia.plugins.votes.commons.model.PlayerVote"/>
+        <mapping class="com.caversia.plugins.votes.commons.model.TopEntry"/>
+    </session-factory>
+</hibernate-configuration>

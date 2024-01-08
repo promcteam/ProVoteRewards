@@ -1,0 +1,128 @@
+general:
+  reminds:
+    interval: 60
+    messages:
+      private: 
+        - "&6-----------------------------------------------------"
+        - "This message will stop after you vote for us! &e--> &fhttp://www.caversia.com/vote"
+        - "&6-----------------------------------------------------"
+        - "&bYou currently have &2%NumberOfVotes% Votes"
+  join:
+    messages:
+      private:
+        - "&7Help &fCaversia &7become the #1 Factions server &fworld wide, &7use /vote in game to support us and earn awesome rewards!"
+        - "&bShop: &fhttp://caversia.buycraft.net"
+        - "&dForums: &fwww.caversia.com/forums"
+  vote:
+    messages:
+      private:
+        - "&4-----------------------------------------------------"
+        - "&7You have voted &2%NumberOfVotes%  time(s) &7this &2month &7so far!"
+        - "&4-----------------------------------------------------"
+        - "&2Each Vote: 145 exp, $1250, 1 token and 1 diamond!"
+        - "&4-----------------------------------------------------"
+        - "&210 vote(s) &7- &2$10,000 in-game + 32 TNT"
+        - "&220 vote(s) &7- &2$12,500 in-game + 50 Caversia tokens"
+        - "&240 vote(s) &7- &26,000 exp + Enchanted Sharpness IV book"
+        - "&260 vote(s) &7- &24,000 exp + 100 Caversia tokens"
+        - "&280 vote(s) &7- &250 McMMO levels to upgrade abilities"
+        - "&2100 vote(s) &7- &2A Random Spawner (Blaze, Pig, etc.)"
+        - "&4-----------------------------------------------------"
+        - "&eTop voters will receive $10 in server store credit!"
+        - "&4-----------------------------------------------------"
+        - "&2Click the link to vote: http://www.caversia.com/vote"
+        - "&4-----------------------------------------------------"
+rewards:
+  default:
+    messages:
+      private:
+        - "&2Thanks for voting!"
+      broadcast:
+        server:
+          - "&7[&4Voting&7] &2%PlayerName% &7voted @ &2http://www.caversia.com/vote &7and received &4145 exp, $1250, 1 token &7and &41 diamond!"
+    commands:
+      - xp 145 %PlayerName%
+      - eco give %PlayerName% 1250
+      - give %PlayerName% diamond 1
+      - points give %PlayerName% 1
+  lucky:
+    "50": 
+      messages:
+        private:
+          - "&2You were lucky and received a Vote key!"
+        broadcast:
+          server:
+            -"&7[&4LuckyVote&7] &2%PlayerName% &7was &4lucky &7and received a &4Vote key!"
+      commands:
+        - loot give %PlayerName% vote-key
+    "100": 
+      messages:
+        private:
+          - "&2You were lucky and received a Hopper!"
+        broadcast:
+          server:
+            - "&7[&4LuckyVote&7] &2%PlayerName% &7was &4lucky &7and received a &4Vote key!"
+      commands:
+        - give %PlayerName% hopper 1
+  cumulative:
+    "10":
+      messages:
+        private:
+         - "&aYou recieved $10,000 in-game + 32 TNT for 10 cumulative votes."
+      commands:
+        - eco give %PlayerName% 10000
+        - give %PlayerName% tnt 32
+    "20":
+      messages:
+        private:
+          - "&aYou recieved $12,500 in-game + 50 Caversia tokens for 20 cumulative votes."
+      commands:
+        - eco give %PlayerName% 12500
+        - points give %PlayerName% 50
+    "40":
+      messages:
+        private:
+          -" &aYou recieved 6,000 exp + Enchanted Sharpness IV book for 40 cumulative votes."
+      commands:
+        - xp 6000 %PlayerName%
+        - give %PlayerName% 403 1 sharpness:4
+    "60":
+      messages:
+        private:
+          - "&aYou recieved 4,000 exp + 100 Caversia tokens for 60 cumulative votes."
+      commands:
+        - xp 4000 %PlayerName%
+        - points give %PlayerName% 100
+    "80":
+      messages:
+        private:
+          - "&aYou recieved 50 McMMO levels for 80 cumulative votes!"
+      commands:
+        - /addcredits %PlayerName% 50
+    "100":
+      messages:
+        private:
+          - "&aYou recieved a random spawner for 100 cumulative votes!"
+      commands:
+        - loot give %PlayerName% 80-votes
+  permissions:
+    caversia.votes.youtuber:
+      messages:
+        broadcast:
+          server:
+            - "&f[&eYOUTUBER&f]&7[&4Voting&7] &2%PlayerName% &7voted @ &2http://www.caversia.com/vote &7and received &4300 exp, $1500, 2 tokens &7and &42 diamonds!"
+      commands:
+        - xp 300 %PlayerName%
+        - eco give %PlayerName% 1500
+        - give %PlayerName% diamond 2
+        - points give %PlayerName% 2
+    caversia.votes.twitch:
+      messages:
+        broadcast:
+          server:
+            - "&f[&eYOUTUBER&f]&7[&4Voting&7] &2%PlayerName% &7voted @ &2http://www.caversia.com/vote &7and received &4300 exp, $1500, 2 tokens &7and &42 diamonds!"
+      commands:
+        - xp 300 %PlayerName%
+        - eco give %PlayerName% 1500
+        - give %PlayerName% diamond 2
+        - points give %PlayerName% 2

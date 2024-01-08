@@ -1,0 +1,5 @@
+name: ${project.name}
+main: ${classes.main}
+version: ${project.version}
+authors: [marvnfl, sp3c]
+depend: [WorldGuard, Votifier]
